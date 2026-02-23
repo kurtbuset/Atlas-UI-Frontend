@@ -26,10 +26,15 @@ export default function App() {
         <ScrollToTop />
         <Routes>
           {/* Dashboard Layout */}
-          <Route path="/TailAdmin/" element={<AppLayout />}>
+          <Route path="/" element={<AppLayout />}>
+            {/* Main Screen Routes */}
             <Route index element={<Home />} />
+            <Route path="members" element={<Home />} />
+            <Route path="policies" element={<Home />} />
+            <Route path="claims" element={<Home />} />
+            <Route path="reports" element={<Home />} />
 
-            {/* Others Page */}
+            {/* Menu Routes */}
             <Route path="profile" element={<UserProfiles />} />
             <Route path="calendar" element={<Calendar />} />
             <Route path="blank" element={<Blank />} />
@@ -54,8 +59,8 @@ export default function App() {
           </Route>
 
           {/* Auth Layout */}
-          <Route path="/TailAdmin/signin" element={<SignIn />} />
-          <Route path="/TailAdmin/signup" element={<SignUp />} />
+          <Route path="signin" element={<SignIn />} />
+          <Route path="signup" element={<SignUp />} />
 
           {/* Fallback Route */}
           <Route path="*" element={<NotFound />} />

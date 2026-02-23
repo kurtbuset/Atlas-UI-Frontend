@@ -15,13 +15,13 @@ export default function DemographicCard() {
     setIsOpen(false);
   }
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] sm:p-6">
+    <div className="rounded-card border border-gray-200/60 bg-white p-6 shadow-sm dark:border-gray-800/60 dark:bg-white/[0.03]">
       <div className="flex justify-between">
         <div>
-          <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
+          <h3 className="text-theme-sm font-semibold text-gray-800 dark:text-white/90">
             Customers Demographic
           </h3>
-          <p className="mt-1 text-gray-500 text-theme-sm dark:text-gray-400">
+          <p className="mt-1 text-gray-500 text-theme-xs dark:text-gray-400">
             Number of customer based on country
           </p>
         </div>
