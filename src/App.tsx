@@ -18,6 +18,9 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
+import MemberList from "./pages/Members/MemberList";
+import MemberForm from "./pages/Members/MemberForm";
+import MemberView from "./pages/Members/MemberView";
 
 export default function App() {
   return (
@@ -26,10 +29,10 @@ export default function App() {
         <ScrollToTop />
         <Routes>
           {/* Dashboard Layout */}
-          <Route path="/" element={<AppLayout />}>
+          <Route path="/TailAdmin/" element={<AppLayout />}>
             {/* Main Screen Routes */}
             <Route index element={<Home />} />
-            <Route path="members" element={<Home />} />
+            {/* <Route path="members" element={<Home />} /> */}
             <Route path="policies" element={<Home />} />
             <Route path="claims" element={<Home />} />
             <Route path="reports" element={<Home />} />
@@ -38,6 +41,12 @@ export default function App() {
             <Route path="profile" element={<UserProfiles />} />
             <Route path="calendar" element={<Calendar />} />
             <Route path="blank" element={<Blank />} />
+
+            {/* Members */}
+            <Route path="members" element={<MemberList />} />
+            <Route path="members/new" element={<MemberForm />} />
+            <Route path="members/view/:id" element={<MemberView />} />
+            <Route path="members/edit/:id" element={<MemberForm />} />
 
             {/* Forms */}
             <Route path="form-elements" element={<FormElements />} />
