@@ -44,7 +44,7 @@ export default function MemberList() {
           title="Member Data"
           action={
             <Link
-              to="/TailAdmin/members/new"
+              to="/members/new"
               className="px-4 py-2 text-sm font-medium text-white bg-brand-500 rounded-lg hover:bg-brand-600"
             >
               Add Member
@@ -120,13 +120,13 @@ export default function MemberList() {
                         <TableCell className="px-5 py-4 text-start">
                           <div className="flex gap-3">
                             <Link
-                              to={`/TailAdmin/members/view/${member.id}`}
+                              to={`/members/view/${member.id}`}
                               className="text-blue-500 hover:text-blue-600"
                             >
                               View
                             </Link>
                             <Link
-                              to={`/TailAdmin/members/edit/${member.id}`}
+                              to={`/members/edit/${member.id}`}
                               className="text-brand-500 hover:text-brand-600"
                             >
                               Edit

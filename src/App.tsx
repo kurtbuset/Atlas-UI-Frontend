@@ -29,7 +29,7 @@ export default function App() {
         <ScrollToTop />
         <Routes>
           {/* Dashboard Layout */}
-          <Route path="/TailAdmin/" element={<AppLayout />}>
+          <Route path="/" element={<AppLayout />}>
             {/* Main Screen Routes */}
             <Route index element={<Home />} />
             {/* <Route path="members" element={<Home />} /> */}
@@ -43,10 +43,10 @@ export default function App() {
             <Route path="blank" element={<Blank />} />
 
             {/* Members */}
-            <Route path="members" element={<MemberList />} />
-            <Route path="members/new" element={<MemberForm />} />
-            <Route path="members/view/:id" element={<MemberView />} />
-            <Route path="members/edit/:id" element={<MemberForm />} />
+            <Route path="/members" element={<MemberList />} />
+            <Route path="/members/new" element={<MemberForm />} />
+            <Route path="/members/view/:id" element={<MemberView />} />
+            <Route path="/members/edit/:id" element={<MemberForm />} />
 
             {/* Forms */}
             <Route path="form-elements" element={<FormElements />} />

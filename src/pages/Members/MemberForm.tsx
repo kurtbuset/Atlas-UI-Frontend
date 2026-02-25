@@ -86,7 +86,7 @@ export default function MemberForm() {
       }
 
       if (saveAndClose) {
-        navigate("/TailAdmin/members");
+        navigate("/members");
       } else {
         // Reset form for new entry
         if (!isEdit) {
@@ -310,7 +310,7 @@ export default function MemberForm() {
               <div className="flex justify-end gap-3 pt-4">
                 <button
                   type="button"
-                  onClick={() => navigate("/TailAdmin/members")}
+                  onClick={() => navigate("/members")}
                   className="px-6 py-2.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
                   disabled={loading}
                 >
