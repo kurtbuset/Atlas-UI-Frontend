@@ -4,21 +4,15 @@ import { Link, useLocation } from "react-router";
 // Assume these icons are imported from an icon library
 import {
   BoxCubeIcon,
-  CalenderIcon,
   ChevronDownIcon,
   GridIcon,
   HorizontaLDots,
-  ListIcon,
-  PageIcon,
   PieChartIcon,
   PlugInIcon,
-  TableIcon,
   UserCircleIcon,
-  UserIcon,
-  DocsIcon,
-  FileIcon,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
+// import SidebarWidget from "./SidebarWidget";
 
 type NavItem = {
   name: string;
@@ -27,64 +21,16 @@ type NavItem = {
   subItems?: { name: string; path: string; pro?: boolean; new?: boolean }[];
 };
 
-// Main Screen section
-const mainScreenItems: NavItem[] = [
+const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
     name: "Dashboard",
-    path: "/",
-  },
-  {
-    icon: <UserIcon />,
-    name: "Members",
-    path: "members",
-  },
-  {
-    icon: <DocsIcon />,
-    name: "Policies",
-    path: "policies",
-  },
-  {
-    icon: <FileIcon />,
-    name: "Claims",
-    path: "claims",
-  },
-  {
-    icon: <TableIcon />,
-    name: "Reports",
-    path: "reports",
-  },
-];
-
-// Menu section
-const navItems: NavItem[] = [
-  {
-    icon: <CalenderIcon />,
-    name: "Calendar",
-    path: "calendar",
+    path: "/TailAdmin/",
   },
   {
     icon: <UserCircleIcon />,
-    name: "User Profile",
-    path: "profile",
-  },
-  {
-    name: "Forms",
-    icon: <ListIcon />,
-    subItems: [{ name: "Form Elements", path: "form-elements", pro: false }],
-  },
-  {
-    name: "Tables",
-    icon: <TableIcon />,
-    subItems: [{ name: "Basic Tables", path: "basic-tables", pro: false }],
-  },
-  {
-    name: "Pages",
-    icon: <PageIcon />,
-    subItems: [
-      { name: "Blank Page", path: "blank", pro: false },
-      { name: "404 Error", path: "error-404", pro: false },
-    ],
+    name: "Members",
+    path: "members",
   },
 ];
 
@@ -124,30 +70,30 @@ const AppSidebar: React.FC = () => {
   const location = useLocation();
 
   const [openSubmenu, setOpenSubmenu] = useState<{
-    type: "mainScreen" | "menu" | "others";
+    type: "main" | "others";
     index: number;
   } | null>(null);
   const [subMenuHeight, setSubMenuHeight] = useState<Record<string, number>>(
-    {}
+    {},
   );
   const subMenuRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   // const isActive = (path: string) => location.pathname === path;
   const isActive = useCallback(
     (path: string) => location.pathname === path,
-    [location.pathname]
+    [location.pathname],
   );
 
   useEffect(() => {
     let submenuMatched = false;
-    ["mainScreen", "menu", "others"].forEach((menuType) => {
-      const items = menuType === "mainScreen" ? mainScreenItems : menuType === "menu" ? navItems : othersItems;
+    ["main", "others"].forEach((menuType) => {
+      const items = menuType === "main" ? navItems : othersItems;
       items.forEach((nav, index) => {
         if (nav.subItems) {
           nav.subItems.forEach((subItem) => {
             if (isActive(subItem.path)) {
               setOpenSubmenu({
-                type: menuType as "mainScreen" | "menu" | "others",
+                type: menuType as "main" | "others",
                 index,
               });
               submenuMatched = true;
@@ -174,7 +120,7 @@ const AppSidebar: React.FC = () => {
     }
   }, [openSubmenu]);
 
-  const handleSubmenuToggle = (index: number, menuType: "mainScreen" | "menu" | "others") => {
+  const handleSubmenuToggle = (index: number, menuType: "main" | "others") => {
     setOpenSubmenu((prevOpenSubmenu) => {
       if (
         prevOpenSubmenu &&
@@ -187,7 +133,7 @@ const AppSidebar: React.FC = () => {
     });
   };
 
-  const renderMenuItems = (items: NavItem[], menuType: "mainScreen" | "menu" | "others") => (
+  const renderMenuItems = (items: NavItem[], menuType: "main" | "others") => (
     <ul className="flex flex-col gap-4">
       {items.map((nav, index) => (
         <li key={nav.name}>
@@ -317,8 +263,8 @@ const AppSidebar: React.FC = () => {
           isExpanded || isMobileOpen
             ? "w-[290px]"
             : isHovered
-            ? "w-[290px]"
-            : "w-[90px]"
+              ? "w-[290px]"
+              : "w-[90px]"
         }
         ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}
         lg:translate-x-0`}
@@ -330,34 +276,37 @@ const AppSidebar: React.FC = () => {
           !isExpanded && !isHovered ? "lg:justify-center" : "justify-start"
         }`}
       >
-        <Link to="/">
-          <span className="text-2xl font-semibold text-gray-800 dark:text-white/90">
-            AtlasAI
-          </span>
+        <Link to="/TailAdmin/">
+          {isExpanded || isHovered || isMobileOpen ? (
+            <>
+              <img
+                className="dark:hidden"
+                src="images/logo/logo.svg"
+                alt="Logo"
+                width={150}
+                height={40}
+              />
+              <img
+                className="hidden dark:block"
+                src="./images/logo/logo-dark.svg"
+                alt="Logo"
+                width={150}
+                height={40}
+              />
+            </>
+          ) : (
+            <img
+              src="./images/logo/logo-icon.svg"
+              alt="Logo"
+              width={32}
+              height={32}
+            />
+          )}
         </Link>
       </div>
       <div className="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar">
         <nav className="mb-6">
           <div className="flex flex-col gap-4">
-            {/* Main Screen Section */}
-            <div>
-              <h2
-                className={`mb-4 text-xs uppercase flex leading-[20px] text-gray-400 ${
-                  !isExpanded && !isHovered
-                    ? "lg:justify-center"
-                    : "justify-start"
-                }`}
-              >
-                {isExpanded || isHovered || isMobileOpen ? (
-                  "Main Screen"
-                ) : (
-                  <HorizontaLDots className="size-6" />
-                )}
-              </h2>
-              {renderMenuItems(mainScreenItems, "mainScreen")}
-            </div>
-            
-            {/* Menu Section */}
             <div>
               <h2
                 className={`mb-4 text-xs uppercase flex leading-[20px] text-gray-400 ${
@@ -372,10 +321,8 @@ const AppSidebar: React.FC = () => {
                   <HorizontaLDots className="size-6" />
                 )}
               </h2>
-              {renderMenuItems(navItems, "menu")}
+              {renderMenuItems(navItems, "main")}
             </div>
-            
-            {/* Others Section */}
             <div className="">
               <h2
                 className={`mb-4 text-xs uppercase flex leading-[20px] text-gray-400 ${
@@ -394,6 +341,7 @@ const AppSidebar: React.FC = () => {
             </div>
           </div>
         </nav>
+        {/* {isExpanded || isHovered || isMobileOpen ? <SidebarWidget /> : null} */}
       </div>
     </aside>
   );
