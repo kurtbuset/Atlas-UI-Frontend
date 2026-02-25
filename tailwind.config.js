@@ -5,6 +5,7 @@ export default {
   darkMode: "class",
   theme: {
     fontFamily: {
+      inter: ["Inter", "sans-serif"],
       outfit: ["Outfit", "sans-serif"],
     },
     screens: {
@@ -21,14 +22,22 @@ export default {
         "title-md": ["36px", "44px"],
         "title-sm": ["30px", "38px"],
         "theme-xl": ["20px", "30px"],
-        "theme-sm": ["14px", "20px"],
-        "theme-xs": ["12px", "18px"],
+        "theme-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+        "theme-xs": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+      },
+      borderRadius: {
+        card: "16px",
       },
       colors: {
         current: "currentColor",
         transparent: "transparent",
         white: "#FFFFFF",
         black: "#101828",
+        "app-bg": {
+          light: "#F9FAFB",
+          DEFAULT: "#F9FAFB",
+          dark: "#0C111D",
+        },
         brand: {
           25: "#F2F7FF",
           50: "#ECF3FF",
@@ -182,6 +191,16 @@ export default {
         13.5: "3.375rem",
         14.5: "3.625rem",
         15: "3.75rem",
+      },
+      keyframes: {
+        shimmer: {
+          "100%": {
+            transform: "translateX(100%)",
+          },
+        },
+      },
+      animation: {
+        shimmer: "shimmer 2s infinite",
       },
     },
   },
