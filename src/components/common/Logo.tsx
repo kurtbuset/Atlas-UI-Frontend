@@ -14,7 +14,7 @@ export const Logo: React.FC<LogoProps> = ({
   const content =
     variant === "full" ? (
       <span className={`text-2xl font-bold text-gray-900 dark:text-white ${className}`}>
-        Atlas UI
+        Atlas AI
       </span>
     ) : (
       <span className={`text-xl font-bold text-gray-900 dark:text-white ${className}`}>

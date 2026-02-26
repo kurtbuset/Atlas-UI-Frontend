@@ -259,7 +259,7 @@ const AppSidebar: React.FC = () => {
 
   return (
     <aside
-      className={`fixed mt-16 flex flex-col lg:mt-0 top-0 px-5 left-0 bg-white dark:bg-gray-900 dark:border-gray-800 text-gray-900 h-screen transition-all duration-300 ease-in-out z-50 border-r border-gray-200 
+      className={`fixed top-0 flex flex-col xl:mt-0 left-0 bg-white dark:bg-gray-900 dark:border-gray-800 text-gray-900 h-screen transition-all duration-300 ease-in-out z-40 border-r border-gray-200 pt-[73px] xl:pt-0
         ${
           isExpanded || isMobileOpen
             ? "w-[290px]"
@@ -268,13 +268,13 @@ const AppSidebar: React.FC = () => {
               : "w-[90px]"
         }
         ${isMobileOpen ? "translate-x-0" : "-translate-x-full"}
-        lg:translate-x-0`}
+        xl:translate-x-0`}
       onMouseEnter={() => !isExpanded && setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`py-8 flex ${
-          !isExpanded && !isHovered ? "lg:justify-center" : "justify-start"
+        className={`py-6 xl:py-8 px-5 flex ${
+          !isExpanded && !isHovered ? "xl:justify-center" : "justify-start"
         }`}
       >
         <Logo
@@ -282,7 +282,7 @@ const AppSidebar: React.FC = () => {
           linkTo="/"
         />
       </div>
-      <div className="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar">
+      <div className="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar px-5">
         <nav className="mb-6">
           <div className="flex flex-col gap-4">
             <div>

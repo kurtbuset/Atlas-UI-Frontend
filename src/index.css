@@ -75,6 +75,16 @@
     scrollbar-width: none; /* Firefox */
   }
 
+  /* Responsive text truncation */
+  .truncate-mobile {
+    @apply truncate sm:whitespace-normal;
+  }
+
+  /* Touch-friendly tap targets */
+  .tap-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
   .custom-scrollbar::-webkit-scrollbar {
     @apply size-1.5;
   }
