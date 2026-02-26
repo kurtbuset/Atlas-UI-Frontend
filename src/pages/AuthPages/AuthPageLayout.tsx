@@ -21,9 +21,6 @@ export default function AuthLayout({
               <div className="mb-4">
                 <Logo linkTo="/" className="text-white text-3xl" />
               </div>
-              <p className="text-center text-gray-400 dark:text-white/60">
-                Free and Open-Source Tailwind CSS Admin Dashboard Template
-              </p>
             </div>
           </div>
         </div>
