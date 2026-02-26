@@ -30,10 +30,10 @@ const GradientCard: React.FC<GradientCardProps> = ({
       className={`rounded-card border border-gray-200/60 shadow-md dark:border-gray-800/60 dark:shadow-xl/5 ${gradientClasses[gradient]} ${className}`}
     >
       {/* Card Header */}
-      <div className="px-6 py-6">
+      <div className="px-4 sm:px-6 py-4 sm:py-6">
         <div className="flex items-center justify-between">
-          <div>
-            <h3 className="text-theme-sm font-semibold text-gray-800 dark:text-white/90">
+          <div className="min-w-0 flex-1">
+            <h3 className="text-theme-sm font-semibold text-gray-800 dark:text-white/90 truncate">
               {title}
             </h3>
             {desc && (
@@ -42,12 +42,12 @@ const GradientCard: React.FC<GradientCardProps> = ({
               </p>
             )}
           </div>
-          {actions && <div>{actions}</div>}
+          {actions && <div className="ml-2 flex-shrink-0">{actions}</div>}
         </div>
       </div>
 
       {/* Card Body */}
-      <div className="px-6 pb-6">
+      <div className="px-4 sm:px-6 pb-4 sm:pb-6">
         {children}
       </div>
     </div>

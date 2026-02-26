@@ -148,7 +148,7 @@ export default function Home() {
   return (
     <>
       <PageMeta
-        title="Member Overview | AtlasAI Dashboard"
+        title="Member Overview | Atlas AI Dashboard"
         description="Member policyholder overview and activity timeline"
       />
 
@@ -183,18 +183,20 @@ export default function Home() {
         // Actual Content
         <>
           {/* Member Header - No Card Container */}
-          <div className="mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <Avatar src="./images/user/user-01.jpg" size="xlarge" status="none" />
-              <div className="flex-1">
-                <h1 className="text-xl font-semibold text-gray-800 dark:text-white/90">
+          <div className="mb-2 sm:mb-3">
+            <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3 mb-2">
+              <div className="flex-shrink-0">
+                <Avatar src="./images/user/user-01.jpg" size="xlarge" status="none" />
+              </div>
+              <div className="flex-1 w-full min-w-0">
+                <h1 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white/90 mb-1 sm:mb-2">
                   Joshua S. Smith
                 </h1>
-                <div className="flex items-center gap-3 mt-2">
-                  <span className="text-theme-sm text-gray-600 dark:text-gray-400">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-xs sm:text-theme-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
                     Policyholder
                   </span>
-                  <span className="text-theme-sm text-gray-500 dark:text-gray-400">
+                  <span className="text-xs sm:text-theme-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">
                     D-21000945300
                   </span>
                   <span className="text-theme-xs text-gray-500 dark:text-gray-400">
@@ -208,114 +210,114 @@ export default function Home() {
             </div>
 
             {/* Tabs */}
-            <div className="flex gap-6 border-b border-gray-200/40 dark:border-gray-800/40">
-              <button className="pb-3 text-theme-sm font-medium text-brand-500 border-b-2 border-brand-500">
+            <div className="flex gap-4 sm:gap-6 border-b border-gray-200/40 dark:border-gray-800/40 overflow-x-auto no-scrollbar pb-px">
+              <button className="pb-3 text-sm sm:text-theme-sm font-medium text-brand-500 border-b-2 border-brand-500 whitespace-nowrap flex-shrink-0">
                 Overview
               </button>
-              <button className="pb-3 text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+              <button className="pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
                 Policies
               </button>
-              <button className="pb-3 text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+              <button className="pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
                 Claims
               </button>
-              <button className="pb-3 text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+              <button className="pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
                 Interactions
               </button>
-              <button className="pb-3 text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+              <button className="pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
                 Notes
               </button>
-              <button className="pb-3 text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+              <button className="pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
                 Tasks
               </button>
             </div>
           </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left Column - Household & Summary Grid */}
-        <div className="space-y-6">
-          {/* Household Card */}
-          <GradientCard title="Household" gradient="blue">
-            <div className="space-y-4">
-              {householdMembers.map((member) => (
-                <div key={member.id} className="flex items-center gap-3">
-                  <div
-                    className={`flex items-center justify-center w-10 h-10 rounded-full ${member.color} text-white text-theme-sm font-medium`}
-                  >
-                    {member.initials}
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-theme-sm font-medium text-gray-800 dark:text-white/90">
-                      {member.name}
-                    </p>
-                    <p className="text-theme-xs text-gray-500 dark:text-gray-400">
-                      {member.role}
-                    </p>
-                    {member.birthDate && (
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="text-theme-xs text-gray-500 dark:text-gray-400">
-                          Born {member.birthDate}
-                        </span>
-                        {member.memberId && (
-                          <>
-                            <span className="text-theme-xs text-gray-400">•</span>
-                            <span className="text-theme-xs text-gray-500 dark:text-gray-400">
-                              Member ID: {member.memberId}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mt-2 sm:mt-3">
+            {/* Left Column - Household & Summary Grid */}
+            <div className="space-y-3 sm:space-y-4">
+              {/* Household Card */}
+              <GradientCard title="Household" gradient="blue">
+                <div className="space-y-3 sm:space-y-4">
+                  {householdMembers.map((member) => (
+                    <div key={member.id} className="flex items-start gap-3">
+                      <div
+                        className={`flex items-center justify-center w-10 h-10 rounded-full ${member.color} text-white text-theme-sm font-medium flex-shrink-0`}
+                      >
+                        {member.initials}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-theme-sm font-medium text-gray-800 dark:text-white/90">
+                          {member.name}
+                        </p>
+                        <p className="text-theme-xs text-gray-500 dark:text-gray-400">
+                          {member.role}
+                        </p>
+                        {member.birthDate && (
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mt-1">
+                            <span className="text-theme-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                              Born {member.birthDate}
                             </span>
-                          </>
+                            {member.memberId && (
+                              <>
+                                <span className="hidden sm:inline text-theme-xs text-gray-400">•</span>
+                                <span className="text-theme-xs text-gray-500 dark:text-gray-400 break-all">
+                                  Member ID: {member.memberId}
+                                </span>
+                              </>
+                            )}
+                          </div>
                         )}
                       </div>
-                    )}
-                  </div>
-                </div>
-              ))}
+                    </div>
+                  ))}
 
-              <button className="flex items-center gap-2 text-theme-sm text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300 mt-4">
-                <PlusIcon className="w-4 h-4" />
-                Add Member
-              </button>
-            </div>
-          </GradientCard>
+                  <button className="flex items-center gap-2 text-theme-sm text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300 mt-3 sm:mt-4">
+                    <PlusIcon className="w-4 h-4 flex-shrink-0" />
+                    <span>Add Member</span>
+                  </button>
+                </div>
+              </GradientCard>
 
-          {/* 2x2 Grid for Summary, Policies, and Cases */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {/* Member Summary Card */}
-            <GradientCard title="Member Summary" gradient="green">
-              <div className="space-y-3">
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center gap-2">
-                    <UserIcon className="w-4 h-4 text-gray-400" />
-                    <span className="text-theme-xs text-gray-500 dark:text-gray-400">
-                      Emp:
-                    </span>
+              {/* 2x2 Grid for Summary, Policies, and Cases */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Member Summary Card */}
+                <GradientCard title="Member Summary" gradient="green">
+                  <div className="space-y-3">
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2">
+                        <UserIcon className="w-4 h-4 text-gray-400" />
+                        <span className="text-theme-xs text-gray-500 dark:text-gray-400">
+                          Emp:
+                        </span>
+                      </div>
+                      <span className="text-theme-sm text-gray-800 dark:text-white/90">
+                        Lebanon
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2">
+                        <ChatIcon className="w-4 h-4 text-gray-400" />
+                        <span className="text-theme-xs text-gray-500 dark:text-gray-400">
+                          Phone:
+                        </span>
+                      </div>
+                      <span className="text-theme-sm text-gray-800 dark:text-white/90">
+                        (417) · 991
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2">
+                        <DocsIcon className="w-4 h-4 text-gray-400" />
+                        <span className="text-theme-xs text-gray-500 dark:text-gray-400">
+                          Address:
+                        </span>
+                      </div>
+                      <span className="text-theme-sm text-gray-800 dark:text-white/90">
+                        1K12.5 Jefferson Ave, Apt Q, Lebanon, MO-65930
+                      </span>
+                    </div>
                   </div>
-                  <span className="text-theme-sm text-gray-800 dark:text-white/90">
-                    Lebanon
-                  </span>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center gap-2">
-                    <ChatIcon className="w-4 h-4 text-gray-400" />
-                    <span className="text-theme-xs text-gray-500 dark:text-gray-400">
-                      Phone:
-                    </span>
-                  </div>
-                  <span className="text-theme-sm text-gray-800 dark:text-white/90">
-                    (417) · 991
-                  </span>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center gap-2">
-                    <DocsIcon className="w-4 h-4 text-gray-400" />
-                    <span className="text-theme-xs text-gray-500 dark:text-gray-400">
-                      Address:
-                    </span>
-                  </div>
-                  <span className="text-theme-sm text-gray-800 dark:text-white/90">
-                    1K12.5 Jefferson Ave, Apt Q, Lebanon, MO-65930
-                  </span>
-                </div>
-              </div>
-            </GradientCard>
+                </GradientCard>
 
             {/* Linked Policies Card */}
             <GradientCard 
@@ -410,124 +412,104 @@ export default function Home() {
         {/* Right Column - Activity Timeline */}
         <div className="lg:col-span-2">
           <div className="rounded-card border border-gray-200/60 bg-gradient-to-br from-white to-indigo-50/40 shadow-md dark:border-gray-800/60 dark:from-white/[0.03] dark:to-brand-500/[0.05] dark:shadow-xl/5 overflow-hidden">
-            {/* Sticky Header */}
-            <div className="sticky top-0 z-10 border-b border-gray-200/40 bg-white/95 backdrop-blur-sm px-6 py-4 dark:border-gray-800/40 dark:bg-gray-dark/95">
-              <div className="flex items-center justify-between mb-4">
+            {/* Header */}
+            <div className="border-b border-gray-200/40 bg-white/95 backdrop-blur-sm px-4 sm:px-6 py-4 sm:py-6 dark:border-gray-800/40 dark:bg-gray-dark/95">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
                 <h3 className="text-theme-sm font-semibold text-gray-800 dark:text-white/90">
                   Activity Timeline
                 </h3>
-                <div className="flex items-center gap-2">
-                  <button className="text-theme-xs text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300">
-                    All
-                  </button>
-                  <button className="text-theme-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-                    Calls
-                  </button>
-                  <button className="text-theme-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-                    Emails
-                  </button>
-                  <button className="text-theme-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-                    Notes
-                  </button>
-                  <button className="text-theme-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-                    Tasks
-                  </button>
-                  <button className="text-gray-400 hover:text-gray-600">
-                    <MoreDotIcon className="w-5 h-5" />
-                  </button>
-                </div>
+                <button className="text-gray-400 hover:text-gray-600">
+                  <MoreDotIcon className="w-5 h-5" />
+                </button>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center gap-2">
-                <Badge color="primary" variant="solid" size="sm">
-                  All
-                </Badge>
-                <Button size="sm" variant="outline" startIcon={<ChatIcon className="w-4 h-4" />}>
-                  Log Call
+              <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+                <Button size="sm" variant="primary" startIcon={<ChatIcon className="w-4 h-4" />} className="flex-shrink-0">
+                  <span className="hidden xs:inline">Log Call</span>
+                  <span className="xs:hidden">Call</span>
                 </Button>
-                <Button size="sm" variant="outline" startIcon={<EnvelopeIcon className="w-4 h-4" />}>
-                  Email
+                <Button size="sm" variant="outline" startIcon={<EnvelopeIcon className="w-4 h-4" />} className="flex-shrink-0">
+                  <span className="hidden xs:inline">Send Email</span>
+                  <span className="xs:hidden">Email</span>
                 </Button>
-                <Button size="sm" variant="outline" startIcon={<PencilIcon className="w-4 h-4" />}>
-                  Note
+                <Button size="sm" variant="outline" startIcon={<PencilIcon className="w-4 h-4" />} className="flex-shrink-0">
+                  <span className="hidden xs:inline">Add Note</span>
+                  <span className="xs:hidden">Note</span>
                 </Button>
-                <Button size="sm" variant="outline" startIcon={<CheckCircleIcon className="w-4 h-4" />}>
-                  Task
+                <Button size="sm" variant="outline" startIcon={<CheckCircleIcon className="w-4 h-4" />} className="flex-shrink-0">
+                  <span className="hidden xs:inline">Create Task</span>
+                  <span className="xs:hidden">Task</span>
                 </Button>
-                <button className="text-gray-400 hover:text-gray-600">
+                <button className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 flex-shrink-0 hidden sm:flex items-center justify-center w-9 h-9 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                   <MoreDotIcon className="w-5 h-5" />
                 </button>
               </div>
             </div>
 
             {/* Timeline Content */}
-            <div className="p-6 space-y-8">
+            <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-3 sm:pt-4 space-y-3 sm:space-y-4">
               {activities.map((activity, index) => {
                 const IconComponent = activity.icon;
                 const isLast = index === activities.length - 1;
                 return (
-                  <div key={activity.id} className="flex gap-4 relative">
+                  <div key={activity.id} className="flex gap-3 sm:gap-4 relative">
                     {/* Vertical Line - stops partway with gap before next item */}
                     {!isLast && (
-                      <div className="absolute left-5 top-10 w-px bg-gray-200 dark:bg-gray-800" style={{ height: 'calc(100% - 1rem)' }} />
+                      <div className="absolute left-4 sm:left-5 top-10 sm:top-12 w-px bg-gray-200 dark:bg-gray-800" style={{ height: 'calc(100% - 2rem)' }} />
                     )}
                     
                     {/* Icon Circle */}
                     <div
-                      className={`relative z-10 flex items-center justify-center w-10 h-10 rounded-full ${activity.color} flex-shrink-0`}
+                      className={`relative z-10 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full ${activity.color} flex-shrink-0`}
                     >
-                      <IconComponent className="w-5 h-5 text-white" />
+                      <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                     </div>
                     
-                    <div className="flex-1">
-                      <div className="flex items-start justify-between mb-1">
-                        <div>
-                          <h4 className="text-theme-sm font-medium text-gray-800 dark:text-white/90">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-sm sm:text-theme-sm font-medium text-gray-800 dark:text-white/90 mb-1">
                             {activity.title}
                           </h4>
                           {activity.badge && (
-                            <Badge color="warning" variant="light" size="sm">
-                              {activity.badge}
-                            </Badge>
+                            <div className="mb-1">
+                              <Badge color="warning" variant="light" size="sm">
+                                {activity.badge}
+                              </Badge>
+                            </div>
                           )}
-                        </div>
-                        <div className="text-right">
-                          <p className="text-theme-xs text-gray-500 dark:text-gray-400">
-                            {activity.time}
-                          </p>
-                          {activity.user && (
-                            <p className="text-theme-xs text-gray-500 dark:text-gray-400">
+                          {activity.user && activity.type === "call" && (
+                            <p className="text-theme-xs text-gray-600 dark:text-gray-400 mb-1">
                               {activity.user}
                             </p>
                           )}
                         </div>
+                        <div className="text-right flex-shrink-0">
+                          <p className="text-theme-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                            {activity.time}
+                          </p>
+                        </div>
                       </div>
 
-                      {activity.user && activity.type === "call" && (
-                        <p className="text-theme-xs text-gray-600 dark:text-gray-400 mb-1">
-                          {activity.user}
-                        </p>
-                      )}
-
                       {activity.description && (
-                        <p className="text-theme-sm text-gray-700 dark:text-gray-300 mb-2">
+                        <p className="text-xs sm:text-theme-sm text-gray-700 dark:text-gray-300 mb-2">
                           {activity.description}
                         </p>
                       )}
 
                       {activity.confidence && (
-                        <p className="text-theme-xs text-gray-600 dark:text-gray-400 mb-2">
+                        <p className="text-theme-xs text-gray-600 dark:text-gray-400 mb-1">
                           Confidence score {activity.confidence}
                         </p>
                       )}
 
                       {activity.details && (
-                        <div className="space-y-1 mt-2">
+                        <div className="space-y-1 mt-1">
                           {activity.details.map((detail, idx) => (
                             <div
                               key={idx}
-                              className="flex items-center gap-2 text-theme-xs"
+                              className="flex flex-wrap items-center gap-2 text-theme-xs"
                             >
                               {detail.value && (
                                 <Badge color="primary" variant="light" size="sm">
@@ -545,13 +527,13 @@ export default function Home() {
                       )}
 
                       {activity.recipient && (
-                        <p className="text-theme-xs text-gray-500 dark:text-gray-400">
+                        <p className="text-theme-xs text-gray-500 dark:text-gray-400 mt-1">
                           to {activity.recipient}
                         </p>
                       )}
 
                       {activity.caseId && (
-                        <p className="text-theme-xs text-gray-500 dark:text-gray-400">
+                        <p className="text-theme-xs text-gray-500 dark:text-gray-400 mt-1">
                           {activity.caseId}
                         </p>
                       )}
