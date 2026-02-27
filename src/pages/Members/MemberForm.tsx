@@ -316,14 +316,14 @@ export default function MemberForm() {
                 >
                   Cancel
                 </button>
-                <button
+                {/* <button
                   type="button"
                   onClick={(e) => handleSubmit(e, false)}
                   className="px-6 py-2.5 text-sm font-medium text-white bg-gray-500 rounded-lg hover:bg-gray-600 disabled:opacity-50"
                   disabled={loading}
                 >
                   Save Changes
-                </button>
+                </button> */}
                 <button
                   type="submit"
                   className="px-6 py-2.5 text-sm font-medium text-white bg-brand-500 rounded-lg hover:bg-brand-600 disabled:opacity-50"

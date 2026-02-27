@@ -3,11 +3,9 @@ import { Link, useLocation } from "react-router";
 
 // Assume these icons are imported from an icon library
 import {
-  BoxCubeIcon,
   ChevronDownIcon,
   GridIcon,
   HorizontaLDots,
-  PieChartIcon,
   PlugInIcon,
   UserCircleIcon,
 } from "../icons";
@@ -135,7 +133,7 @@ const AppSidebar: React.FC = () => {
   };
 
   const renderMenuItems = (items: NavItem[], menuType: "main" | "others") => (
-    <ul className="flex flex-col gap-4">
+    <ul className="flex flex-col gap-2 sm:gap-3 lg:gap-4">
       {items.map((nav, index) => (
         <li key={nav.name}>
           {nav.subItems ? (
@@ -147,8 +145,8 @@ const AppSidebar: React.FC = () => {
                   : "menu-item-inactive"
               } cursor-pointer ${
                 !isExpanded && !isHovered
-                  ? "lg:justify-center"
-                  : "lg:justify-start"
+                  ? "lg:justify-center lg:px-0"
+                  : ""
               }`}
             >
               <span
@@ -180,6 +178,10 @@ const AppSidebar: React.FC = () => {
                 to={nav.path}
                 className={`menu-item group ${
                   isActive(nav.path) ? "menu-item-active" : "menu-item-inactive"
+                } ${
+                  !isExpanded && !isHovered
+                    ? "lg:justify-center lg:px-0"
+                    : ""
                 }`}
               >
                 <span
@@ -273,21 +275,20 @@ const AppSidebar: React.FC = () => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`py-6 xl:py-8 px-5 flex ${
+        className={`hidden xl:flex py-4 px-5 ${
           !isExpanded && !isHovered ? "xl:justify-center" : "justify-start"
         }`}
       >
-        <Logo
-          variant={isExpanded || isHovered || isMobileOpen ? "full" : "icon"}
-          linkTo="/"
-        />
+        {(isExpanded || isHovered) && (
+          <Logo variant="full" linkTo="/" />
+        )}
       </div>
-      <div className="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar px-5">
+      <div className="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar px-5 pt-4 xl:pt-2">
         <nav className="mb-6">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3 sm:gap-4">
             <div>
               <h2
-                className={`mb-4 text-xs uppercase flex leading-[20px] text-gray-400 ${
+                className={`mb-3 sm:mb-4 text-xs uppercase flex leading-[20px] text-gray-400 ${
                   !isExpanded && !isHovered
                     ? "lg:justify-center"
                     : "justify-start"
@@ -296,14 +297,14 @@ const AppSidebar: React.FC = () => {
                 {isExpanded || isHovered || isMobileOpen ? (
                   "Menu"
                 ) : (
-                  <HorizontaLDots className="size-6" />
+                  <HorizontaLDots className="w-5 h-5 sm:w-6 sm:h-6" />
                 )}
               </h2>
               {renderMenuItems(navItems, "main")}
             </div>
             <div className="">
               <h2
-                className={`mb-4 text-xs uppercase flex leading-[20px] text-gray-400 ${
+                className={`mb-3 sm:mb-4 text-xs uppercase flex leading-[20px] text-gray-400 ${
                   !isExpanded && !isHovered
                     ? "lg:justify-center"
                     : "justify-start"
@@ -312,7 +313,7 @@ const AppSidebar: React.FC = () => {
                 {isExpanded || isHovered || isMobileOpen ? (
                   "Others"
                 ) : (
-                  <HorizontaLDots />
+                  <HorizontaLDots className="w-5 h-5 sm:w-6 sm:h-6" />
                 )}
               </h2>
               {renderMenuItems(othersItems, "others")}
