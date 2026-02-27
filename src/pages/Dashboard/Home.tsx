@@ -183,20 +183,20 @@ export default function Home() {
         // Actual Content
         <>
           {/* Member Header - No Card Container */}
-          <div className="mb-2 sm:mb-3">
-            <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3 mb-2">
+          <div className="mb-3 sm:mb-4 lg:mb-6">
+            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
               <div className="flex-shrink-0">
                 <Avatar src="./images/user/user-01.jpg" size="xlarge" status="none" />
               </div>
               <div className="flex-1 w-full min-w-0">
-                <h1 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-white/90 mb-1 sm:mb-2">
+                <h1 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-white/90 mb-2">
                   Joshua S. Smith
                 </h1>
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-xs sm:text-theme-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                  <span className="text-sm sm:text-theme-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">
                     Policyholder
                   </span>
-                  <span className="text-xs sm:text-theme-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                  <span className="text-sm sm:text-theme-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">
                     D-21000945300
                   </span>
                   <span className="text-theme-xs text-gray-500 dark:text-gray-400">
@@ -211,59 +211,56 @@ export default function Home() {
 
             {/* Tabs */}
             <div className="flex gap-4 sm:gap-6 border-b border-gray-200/40 dark:border-gray-800/40 overflow-x-auto no-scrollbar pb-px">
-              <button className="pb-3 text-sm sm:text-theme-sm font-medium text-brand-500 border-b-2 border-brand-500 whitespace-nowrap flex-shrink-0">
+              <button className="pb-2.5 sm:pb-3 text-sm sm:text-theme-sm font-medium text-brand-500 border-b-2 border-brand-500 whitespace-nowrap flex-shrink-0">
                 Overview
               </button>
-              <button className="pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
+              <button className="pb-2.5 sm:pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
                 Policies
               </button>
-              <button className="pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
+              <button className="pb-2.5 sm:pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
                 Claims
               </button>
-              <button className="pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
+              <button className="pb-2.5 sm:pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
                 Interactions
               </button>
-              <button className="pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
+              <button className="pb-2.5 sm:pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
                 Notes
               </button>
-              <button className="pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
+              <button className="pb-2.5 sm:pb-3 text-sm sm:text-theme-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 whitespace-nowrap flex-shrink-0">
                 Tasks
               </button>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mt-2 sm:mt-3">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
             {/* Left Column - Household & Summary Grid */}
-            <div className="space-y-3 sm:space-y-4">
+            <div className="space-y-4 sm:space-y-5 lg:space-y-6">
               {/* Household Card */}
               <GradientCard title="Household" gradient="blue">
                 <div className="space-y-3 sm:space-y-4">
                   {householdMembers.map((member) => (
-                    <div key={member.id} className="flex items-start gap-3">
+                    <div key={member.id} className="flex items-start gap-2.5 sm:gap-3 md:gap-4">
                       <div
-                        className={`flex items-center justify-center w-10 h-10 rounded-full ${member.color} text-white text-theme-sm font-medium flex-shrink-0`}
+                        className={`flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full ${member.color} text-white text-sm sm:text-theme-sm font-medium flex-shrink-0`}
                       >
                         {member.initials}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-theme-sm font-medium text-gray-800 dark:text-white/90">
+                        <p className="text-sm sm:text-theme-sm font-medium text-gray-800 dark:text-white/90 mb-0.5">
                           {member.name}
                         </p>
-                        <p className="text-theme-xs text-gray-500 dark:text-gray-400">
+                        <p className="text-xs sm:text-theme-xs text-gray-500 dark:text-gray-400 mb-1">
                           {member.role}
                         </p>
                         {member.birthDate && (
-                          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mt-1">
-                            <span className="text-theme-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                          <div className="flex flex-col gap-0.5 mt-1">
+                            <span className="text-xs sm:text-theme-xs text-gray-500 dark:text-gray-400">
                               Born {member.birthDate}
                             </span>
                             {member.memberId && (
-                              <>
-                                <span className="hidden sm:inline text-theme-xs text-gray-400">•</span>
-                                <span className="text-theme-xs text-gray-500 dark:text-gray-400 break-all">
-                                  Member ID: {member.memberId}
-                                </span>
-                              </>
+                              <span className="text-xs sm:text-theme-xs text-gray-500 dark:text-gray-400">
+                                Member ID: {member.memberId}
+                              </span>
                             )}
                           </div>
                         )}
@@ -271,7 +268,7 @@ export default function Home() {
                     </div>
                   ))}
 
-                  <button className="flex items-center gap-2 text-theme-sm text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300 mt-3 sm:mt-4">
+                  <button className="flex items-center gap-2 text-sm sm:text-theme-sm text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300 mt-3 sm:mt-4 pt-2 border-t border-gray-200/40 dark:border-gray-800/40">
                     <PlusIcon className="w-4 h-4 flex-shrink-0" />
                     <span>Add Member</span>
                   </button>
@@ -279,40 +276,40 @@ export default function Home() {
               </GradientCard>
 
               {/* 2x2 Grid for Summary, Policies, and Cases */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5">
                 {/* Member Summary Card */}
                 <GradientCard title="Member Summary" gradient="green">
-                  <div className="space-y-3">
-                    <div className="flex flex-col gap-2">
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex flex-col gap-1.5">
                       <div className="flex items-center gap-2">
-                        <UserIcon className="w-4 h-4 text-gray-400" />
-                        <span className="text-theme-xs text-gray-500 dark:text-gray-400">
+                        <UserIcon className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                        <span className="text-xs sm:text-theme-xs text-gray-500 dark:text-gray-400">
                           Emp:
                         </span>
                       </div>
-                      <span className="text-theme-sm text-gray-800 dark:text-white/90">
+                      <span className="text-sm sm:text-theme-sm text-gray-800 dark:text-white/90 pl-6">
                         Lebanon
                       </span>
                     </div>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-1.5">
                       <div className="flex items-center gap-2">
-                        <ChatIcon className="w-4 h-4 text-gray-400" />
-                        <span className="text-theme-xs text-gray-500 dark:text-gray-400">
+                        <ChatIcon className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                        <span className="text-xs sm:text-theme-xs text-gray-500 dark:text-gray-400">
                           Phone:
                         </span>
                       </div>
-                      <span className="text-theme-sm text-gray-800 dark:text-white/90">
-                        (417) · 991
+                      <span className="text-sm sm:text-theme-sm text-gray-800 dark:text-white/90 pl-6">
+                        (417) - 991
                       </span>
                     </div>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-1.5">
                       <div className="flex items-center gap-2">
-                        <DocsIcon className="w-4 h-4 text-gray-400" />
-                        <span className="text-theme-xs text-gray-500 dark:text-gray-400">
+                        <DocsIcon className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                        <span className="text-xs sm:text-theme-xs text-gray-500 dark:text-gray-400">
                           Address:
                         </span>
                       </div>
-                      <span className="text-theme-sm text-gray-800 dark:text-white/90">
+                      <span className="text-sm sm:text-theme-sm text-gray-800 dark:text-white/90 pl-6 leading-relaxed">
                         1K12.5 Jefferson Ave, Apt Q, Lebanon, MO-65930
                       </span>
                     </div>
@@ -325,29 +322,29 @@ export default function Home() {
               gradient="purple"
               actions={<button className="text-gray-400 hover:text-gray-600">→</button>}
             >
-              <div className="space-y-3">
+              <div className="space-y-3 sm:space-y-4">
                 <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <DocsIcon className="w-4 h-4 text-gray-400" />
-                    <p className="text-theme-xs text-gray-500 dark:text-gray-400">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <DocsIcon className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                    <p className="text-xs sm:text-theme-xs text-gray-500 dark:text-gray-400">
                       Group: Lebanon
                     </p>
                   </div>
-                  <p className="text-theme-xs text-gray-600 dark:text-gray-400 ml-6">
+                  <p className="text-xs sm:text-theme-xs text-gray-600 dark:text-gray-400 pl-6">
                     Plan: A66583650 - PPO
                   </p>
                 </div>
                 <div className="border-t border-gray-200/40 dark:border-gray-800/40 pt-3">
-                  <div className="flex items-center gap-2 mb-1">
-                    <CalenderIcon className="w-4 h-4 text-gray-400" />
-                    <p className="text-theme-xs text-gray-500 dark:text-gray-400">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <CalenderIcon className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                    <p className="text-xs sm:text-theme-xs text-gray-500 dark:text-gray-400">
                       Birthdate
                     </p>
                   </div>
-                  <p className="text-theme-xs text-gray-500 dark:text-gray-400 ml-6 mb-1">
+                  <p className="text-xs sm:text-theme-xs text-gray-500 dark:text-gray-400 pl-6 mb-1">
                     08/21/1994
                   </p>
-                  <p className="text-theme-xs text-gray-600 dark:text-gray-400 ml-6">
+                  <p className="text-xs sm:text-theme-xs text-gray-600 dark:text-gray-400 pl-6">
                     SSN: •••• • 1254
                   </p>
                 </div>
@@ -363,17 +360,17 @@ export default function Home() {
               {openCases.map((caseItem) => (
                 <div
                   key={caseItem.id}
-                  className="p-3 rounded-lg bg-white/60 dark:bg-white/[0.02] border border-gray-100/50 dark:border-gray-800/50"
+                  className="p-3 sm:p-4 rounded-lg bg-white/60 dark:bg-white/[0.02] border border-gray-100/50 dark:border-gray-800/50"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-theme-sm font-medium text-brand-500">
+                    <span className="text-sm sm:text-theme-sm font-medium text-brand-500">
                       {caseItem.id}
                     </span>
                     <Badge color="error" variant="light" size="sm">
                       {caseItem.status}
                     </Badge>
                   </div>
-                  <p className="text-theme-xs text-gray-600 dark:text-gray-400">
+                  <p className="text-xs sm:text-theme-xs text-gray-600 dark:text-gray-400 leading-relaxed">
                     {caseItem.description}
                   </p>
                 </div>
@@ -389,20 +386,20 @@ export default function Home() {
               {recentCases.map((caseItem) => (
                 <div
                   key={caseItem.id}
-                  className="flex items-center justify-between p-3 rounded-lg bg-white/60 dark:bg-white/[0.02] border border-gray-100/50 dark:border-gray-800/50"
+                  className="flex items-center justify-between p-3 sm:p-4 rounded-lg bg-white/60 dark:bg-white/[0.02] border border-gray-100/50 dark:border-gray-800/50"
                 >
-                  <div className="flex items-center gap-2">
-                    <TaskIcon className="w-4 h-4 text-gray-400" />
-                    <div>
-                      <p className="text-theme-sm font-medium text-brand-500">
+                  <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+                    <TaskIcon className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                    <div className="min-w-0">
+                      <p className="text-sm sm:text-theme-sm font-medium text-brand-500 truncate">
                         #{caseItem.id}
                       </p>
-                      <p className="text-theme-xs text-gray-500 dark:text-gray-400">
+                      <p className="text-xs sm:text-theme-xs text-gray-500 dark:text-gray-400">
                         {caseItem.team}
                       </p>
                     </div>
                   </div>
-                  <button className="text-gray-400 hover:text-gray-600">→</button>
+                  <button className="text-gray-400 hover:text-gray-600 flex-shrink-0">→</button>
                 </div>
               ))}
             </GradientCard>

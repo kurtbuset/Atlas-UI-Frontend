@@ -14,12 +14,12 @@ const LayoutContent: React.FC = () => {
         <Backdrop />
       </div>
       <div
-        className={`flex-1 flex flex-col transition-all duration-300 ease-in-out ${
+        className={`flex-1 flex flex-col min-w-0 transition-all duration-300 ease-in-out ${
           isExpanded || isHovered ? "xl:ml-[290px]" : "xl:ml-[90px]"
         } ${isMobileOpen ? "ml-0" : ""}`}
       >
         <AppHeader />
-        <main className="flex-1 p-2 sm:p-3 mx-auto w-full max-w-screen-2xl md:p-4 lg:p-6">
+        <main className="flex-1 p-2.5 sm:p-4 md:p-5 lg:p-6 mx-auto w-full max-w-screen-2xl">
           <Outlet />
         </main>
       </div>

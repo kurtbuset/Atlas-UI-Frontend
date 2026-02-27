@@ -17,19 +17,19 @@ export default function UserDropdown() {
     <div className="relative">
       <button
         onClick={toggleDropdown}
-        className="flex items-center text-gray-700 dropdown-toggle dark:text-gray-400"
+        className="flex items-center gap-1 sm:gap-2 text-gray-700 dropdown-toggle dark:text-gray-400"
       >
-        <span className="mr-3 overflow-hidden rounded-full h-11 w-11">
-          <img src="./images/user/owner.jpg" alt="User" />
+        <span className="overflow-hidden rounded-full h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11 flex-shrink-0">
+          <img src="./images/user/owner.jpg" alt="User" className="w-full h-full object-cover" />
         </span>
 
-        <span className="block mr-1 font-medium text-theme-sm">Morey</span>
+        <span className="hidden sm:block font-medium text-sm lg:text-theme-sm truncate max-w-[100px] lg:max-w-none">Morey</span>
         <svg
-          className={`stroke-gray-500 dark:stroke-gray-400 transition-transform duration-200 ${
+          className={`stroke-gray-500 dark:stroke-gray-400 transition-transform duration-200 flex-shrink-0 ${
             isOpen ? "rotate-180" : ""
           }`}
-          width="18"
-          height="20"
+          width="16"
+          height="18"
           viewBox="0 0 18 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -47,29 +47,29 @@ export default function UserDropdown() {
       <Dropdown
         isOpen={isOpen}
         onClose={closeDropdown}
-        className="absolute right-0 mt-[17px] flex w-[260px] flex-col rounded-2xl border border-gray-200 bg-white p-3 shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark"
+        className="absolute right-0 mt-2 sm:mt-[17px] flex w-[240px] sm:w-[260px] flex-col rounded-xl sm:rounded-2xl border border-gray-200 bg-white p-2.5 sm:p-3 shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark"
       >
-        <div>
-          <span className="block font-medium text-gray-700 text-theme-sm dark:text-gray-400">
+        <div className="pb-2.5 sm:pb-3 border-b border-gray-200 dark:border-gray-800">
+          <span className="block font-medium text-sm sm:text-theme-sm text-gray-700 dark:text-gray-400 truncate">
             Morey
           </span>
-          <span className="mt-0.5 block text-theme-xs text-gray-500 dark:text-gray-400">
+          <span className="mt-0.5 block text-xs sm:text-theme-xs text-gray-500 dark:text-gray-400 truncate">
             randomuser@pimjo.com
           </span>
         </div>
 
-        <ul className="flex flex-col gap-1 pt-4 pb-3 border-b border-gray-200 dark:border-gray-800">
+        <ul className="flex flex-col gap-0.5 sm:gap-1 pt-2.5 sm:pt-4 pb-2.5 sm:pb-3 border-b border-gray-200 dark:border-gray-800">
           <li>
             <DropdownItem
               onItemClick={closeDropdown}
               tag="a"
               to="/profile"
-              className="flex items-center gap-3 px-3 py-2 font-medium text-gray-700 rounded-lg group text-theme-sm hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+              className="flex items-center gap-2.5 sm:gap-3 px-2.5 sm:px-3 py-2 font-medium text-gray-700 rounded-lg group text-sm sm:text-theme-sm hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
             >
               <svg
-                className="fill-gray-500 group-hover:fill-gray-700 dark:fill-gray-400 dark:group-hover:fill-gray-300"
-                width="24"
-                height="24"
+                className="fill-gray-500 group-hover:fill-gray-700 dark:fill-gray-400 dark:group-hover:fill-gray-300 flex-shrink-0"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ export default function UserDropdown() {
                   fill=""
                 />
               </svg>
-              Edit profile
+              <span className="truncate">Edit profile</span>
             </DropdownItem>
           </li>
           <li>
@@ -89,12 +89,12 @@ export default function UserDropdown() {
               onItemClick={closeDropdown}
               tag="a"
               to="/profile"
-              className="flex items-center gap-3 px-3 py-2 font-medium text-gray-700 rounded-lg group text-theme-sm hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+              className="flex items-center gap-2.5 sm:gap-3 px-2.5 sm:px-3 py-2 font-medium text-gray-700 rounded-lg group text-sm sm:text-theme-sm hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
             >
               <svg
-                className="fill-gray-500 group-hover:fill-gray-700 dark:fill-gray-400 dark:group-hover:fill-gray-300"
-                width="24"
-                height="24"
+                className="fill-gray-500 group-hover:fill-gray-700 dark:fill-gray-400 dark:group-hover:fill-gray-300 flex-shrink-0"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@ export default function UserDropdown() {
                   fill=""
                 />
               </svg>
-              Account settings
+              <span className="truncate">Account settings</span>
             </DropdownItem>
           </li>
           <li>
@@ -114,12 +114,12 @@ export default function UserDropdown() {
               onItemClick={closeDropdown}
               tag="a"
               to="/profile"
-              className="flex items-center gap-3 px-3 py-2 font-medium text-gray-700 rounded-lg group text-theme-sm hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+              className="flex items-center gap-2.5 sm:gap-3 px-2.5 sm:px-3 py-2 font-medium text-gray-700 rounded-lg group text-sm sm:text-theme-sm hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
             >
               <svg
-                className="fill-gray-500 group-hover:fill-gray-700 dark:fill-gray-400 dark:group-hover:fill-gray-300"
-                width="24"
-                height="24"
+                className="fill-gray-500 group-hover:fill-gray-700 dark:fill-gray-400 dark:group-hover:fill-gray-300 flex-shrink-0"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -131,18 +131,18 @@ export default function UserDropdown() {
                   fill=""
                 />
               </svg>
-              Support
+              <span className="truncate">Support</span>
             </DropdownItem>
           </li>
         </ul>
         <Link
           to="/signin"
-          className="flex items-center gap-3 px-3 py-2 mt-3 font-medium text-gray-700 rounded-lg group text-theme-sm hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+          className="flex items-center gap-2.5 sm:gap-3 px-2.5 sm:px-3 py-2 mt-2 sm:mt-3 font-medium text-gray-700 rounded-lg group text-sm sm:text-theme-sm hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
         >
           <svg
-            className="fill-gray-500 group-hover:fill-gray-700 dark:group-hover:fill-gray-300"
-            width="24"
-            height="24"
+            className="fill-gray-500 group-hover:fill-gray-700 dark:group-hover:fill-gray-300 flex-shrink-0"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +154,7 @@ export default function UserDropdown() {
               fill=""
             />
           </svg>
-          Sign out
+          <span className="truncate">Sign out</span>
         </Link>
       </Dropdown>
     </div>
