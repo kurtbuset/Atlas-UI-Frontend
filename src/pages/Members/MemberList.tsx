@@ -40,6 +40,32 @@ export default function MemberList() {
       <PageMeta title="Members | TailAdmin" description="Manage members" />
       <PageBreadcrumb pageTitle="Members" />
       <div className="space-y-6">
+        {/* HIPAA Notice */}
+        <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg dark:bg-blue-900/20 dark:border-blue-800">
+          <div className="flex items-start gap-3">
+            <svg
+              className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <div className="flex-1">
+              <p className="text-sm font-medium text-blue-800 dark:text-blue-300">
+                HIPAA Protected Information
+              </p>
+              <p className="text-xs text-blue-600 dark:text-blue-400 mt-1">
+                Sensitive member data (Member ID, Email) is blurred for privacy.
+                Click "View" to verify identity and access full PHI.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <ComponentCard
           title="Member Data"
           action={
@@ -96,7 +122,9 @@ export default function MemberList() {
                     {members.map((member) => (
                       <TableRow key={member.id}>
                         <TableCell className="px-3 sm:px-4 md:px-5 py-3 sm:py-4 text-gray-500 text-start text-xs sm:text-theme-sm dark:text-gray-400">
-                          {member.memberId}
+                          <span className="blur-[3px] select-none">
+                            {member.memberId}
+                          </span>
                         </TableCell>
                         <TableCell className="px-3 sm:px-4 md:px-5 py-3 sm:py-4 text-start">
                           <span className="font-medium text-gray-800 text-xs sm:text-theme-sm dark:text-white/90">
@@ -104,7 +132,9 @@ export default function MemberList() {
                           </span>
                         </TableCell>
                         <TableCell className="px-3 sm:px-4 md:px-5 py-3 sm:py-4 text-gray-500 text-start text-xs sm:text-theme-sm dark:text-gray-400">
-                          {member.email}
+                          <span className="blur-[3px] select-none">
+                            {member.email}
+                          </span>
                         </TableCell>
                         <TableCell className="px-3 sm:px-4 md:px-5 py-3 sm:py-4 text-start">
                           <Badge
@@ -122,7 +152,7 @@ export default function MemberList() {
                           <div className="flex gap-2 sm:gap-3">
                             <Link
                               to={`/members/view/${member.id}`}
-                              className="text-xs sm:text-sm text-blue-500 hover:text-blue-600"
+                              className="text-xs sm:text-sm text-blue-500 hover:text-blue-600 font-medium"
                             >
                               View
                             </Link>

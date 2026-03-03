@@ -1,5 +1,17 @@
 # TailAdmin React - Free React Tailwind Admin Dashboard Template
 
+## 🏥 HIPAA Compliance Features
+
+This template now includes a complete HIPAA verification system for healthcare CRM applications:
+
+- **Pre-Dashboard Verification Modal**: Blocks PHI access until identity is verified
+- **Protected Content Blurring**: Automatically blurs sensitive data until verification
+- **Verification Badge System**: Visual indicators showing verification status
+- **Compliance Logging**: Automatic audit trail for all PHI access
+- **Reusable Components**: Easy to integrate into any healthcare application
+
+See [HIPAA_IMPLEMENTATION.md](HIPAA_IMPLEMENTATION.md) for detailed documentation.
+
 #### Preview
 
 - [Demo](https://themewagon.github.io/TailAdmin/)
@@ -11,6 +23,7 @@
 ## ✨ Fully Responsive Design
 
 This template is now fully responsive and optimized for all devices:
+
 - 📱 Mobile phones (320px+)
 - 📱 Tablets (768px+)
 - 💻 Laptops (1024px+)
