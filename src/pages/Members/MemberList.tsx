@@ -3,7 +3,8 @@ import { Link } from "react-router";
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
 import PageMeta from "../../components/common/PageMeta";
 import ComponentCard from "../../components/common/ComponentCard";
-import { memberService, Member } from "../../services/memberService";
+import { memberService } from "../../services";
+import { Member } from "../../models";
 import {
   Table,
   TableBody,
@@ -96,7 +97,7 @@ export default function MemberList() {
                     {members.map((member) => (
                       <TableRow key={member.id}>
                         <TableCell className="px-3 sm:px-4 md:px-5 py-3 sm:py-4 text-gray-500 text-start text-xs sm:text-theme-sm dark:text-gray-400">
-                          {member.memberId}
+                          {member.id}
                         </TableCell>
                         <TableCell className="px-3 sm:px-4 md:px-5 py-3 sm:py-4 text-start">
                           <span className="font-medium text-gray-800 text-xs sm:text-theme-sm dark:text-white/90">

@@ -19,7 +19,7 @@ import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
 import MemberList from "./pages/Members/MemberList";
-import MemberForm from "./pages/Members/MemberForm";
+import MemberFormMultiStep from "./pages/Members/MemberFormMultiStep";
 import MemberView from "./pages/Members/MemberView";
 
 export default function App() {
@@ -44,9 +44,9 @@ export default function App() {
 
             {/* Members */}
             <Route path="/members" element={<MemberList />} />
-            <Route path="/members/new" element={<MemberForm />} />
+            <Route path="/members/new" element={<MemberFormMultiStep />} />
             <Route path="/members/view/:id" element={<MemberView />} />
-            <Route path="/members/edit/:id" element={<MemberForm />} />
+            <Route path="/members/edit/:id" element={<MemberFormMultiStep />} />
 
             {/* Forms */}
             <Route path="form-elements" element={<FormElements />} />
