@@ -10,8 +10,8 @@ const sizeClasses = {
   small: "h-8 w-8 max-w-8",
   medium: "h-10 w-10 max-w-10",
   large: "h-12 w-12 max-w-12",
-  xlarge: "h-14 w-14 max-w-14",
-  xxlarge: "h-16 w-16 max-w-16",
+  xlarge: "h-20 w-20 max-w-20 sm:h-24 sm:w-24 sm:max-w-24",
+  xxlarge: "h-24 w-24 max-w-24 sm:h-28 sm:w-28 sm:max-w-28",
 };
 
 const statusSizeClasses = {
@@ -36,9 +36,17 @@ const Avatar: React.FC<AvatarProps> = ({
   status = "none",
 }) => {
   return (
-    <div className={`relative  rounded-full ${sizeClasses[size]}`}>
+    <div className={`relative rounded-full ${sizeClasses[size]} overflow-hidden bg-gray-200 dark:bg-gray-700`}>
       {/* Avatar Image */}
-      <img src={`${src}`} alt={alt} className="object-cover rounded-full" />
+      <img 
+        src={src} 
+        alt={alt} 
+        className="w-full h-full object-cover rounded-full"
+        onError={(e) => {
+          console.error('Avatar image failed to load:', src);
+          e.currentTarget.style.display = 'none';
+        }}
+      />
 
       {/* Status Indicator */}
       {status !== "none" && (
