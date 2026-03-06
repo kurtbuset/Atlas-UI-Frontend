@@ -1,8 +1,8 @@
 import type React from "react";
 import type { FC } from "react";
 
-interface InputProps {
-  type?: "text" | "number" | "email" | "password" | "date" | "time" | string;
+export interface InputProps {
+  type?: "text" | "number" | "email" | "password" | "date" | "time" | "tel" | string;
   id?: string;
   name?: string;
   placeholder?: string;
@@ -12,6 +12,7 @@ interface InputProps {
   min?: string;
   max?: string;
   step?: number;
+  maxLength?: number;
   disabled?: boolean;
   required?: boolean;
   success?: boolean;
@@ -30,6 +31,7 @@ const Input: FC<InputProps> = ({
   min,
   max,
   step,
+  maxLength,
   disabled = false,
   required = false,
   success = false,
@@ -60,6 +62,7 @@ const Input: FC<InputProps> = ({
         min={min}
         max={max}
         step={step}
+        maxLength={maxLength}
         disabled={disabled}
         required={required}
         className={inputClasses}
